@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync s3://cf-simple-s3-origin-mycloudresumechallange-160885260533/ -region us-east-1
+          aws s3 sync s3://cf-simple-s3-origin-mycloudresumechallange-160885260533/ --region us-east-1
 
       - name: Invalidate CloudFront Cache
         run: |
