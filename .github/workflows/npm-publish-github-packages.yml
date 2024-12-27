@@ -19,9 +19,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build the Project
-        run: npm run build  # Assumes your app has a `build` script
-
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
@@ -31,5 +28,8 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./build s3://your-bucket-name --delete
-          aws s3 website s3://your-bucket-name/ --index-document index.html --error-document error.html
+          aws s3 sync s3://cf-simple-s3-origin-mycloudresumechallange-160885260533/ -region us-east-1
+
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
