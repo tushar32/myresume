@@ -1,0 +1,19 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tushar32/myresume.git"
+  },
+  "author": "Tushar Barate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tushar32/myresume/issues"
+  },
+  "homepage": "https://github.com/tushar32/myresume#readme"
+}
